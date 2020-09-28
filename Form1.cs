@@ -16,6 +16,8 @@ namespace CombineImages
 {
     public partial class Form1 : Form
     {
+        object[] imagesArray;
+
         public Form1()
         {
             InitializeComponent();
@@ -43,22 +45,31 @@ namespace CombineImages
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 //Move selected files to listbox
-                foreach (object fileName in openFileDialog1.FileNames)
+                foreach (object filePath in openFileDialog1.FileNames)
                 {
-                    listBox1.Items.Add(fileName.ToString());
+                    listBox1.Items.Add(filePath.ToString());
                 }   
             }
         }
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            foreach (string x in listBox1.Items)
+            // If export directory does not exist, create it
+            if (!Directory.Exists(@"C:\test\"))
             {
-                MessageBox.Show(x); // TEST
+                System.IO.Directory.CreateDirectory(@"C:\test\");
+            }
+
+            // Export images
+            foreach (string filePath in listBox1.Items)
+            {
+                string fileName = Path.GetFileName(filePath);
+                Bitmap testImage = (Bitmap)Image.FromFile(filePath);
+                string finalImagePath = @"C:\test\" + fileName;
+                testImage.Save(finalImagePath, ImageFormat.Jpeg);
             }
         }
     }
