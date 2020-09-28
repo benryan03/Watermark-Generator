@@ -58,7 +58,7 @@ namespace CombineImages
         {
             foreach (string x in listBox1.Items)
             {
-                MessageBox.Show(x);
+                MessageBox.Show(x); // TEST
             }
         }
     }

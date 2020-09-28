@@ -60,6 +60,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Images|*.jpg;*.jpeg;*.png;";
             this.openFileDialog1.Multiselect = true;
             // 
             // generateButton
