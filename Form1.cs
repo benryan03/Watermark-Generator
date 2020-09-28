@@ -59,14 +59,19 @@ namespace CombineImages
                 System.IO.Directory.CreateDirectory(@"C:\test\");
             }
 
-            // Export images
             foreach (string filePath in listBox1.Items)
             {
-                addWatermark(filePath);
+                // Add watermark to image
+                Bitmap watermarkedImage = addWatermark(filePath);
+
+                // Export image
+                string fileName = Path.GetFileName(filePath);
+                string exportFilePath = @"C:\test\" + fileName;
+                watermarkedImage.Save(exportFilePath, ImageFormat.Jpeg);
             }
         }
 
-        private void addWatermark(string filePath)
+        private Bitmap addWatermark(string filePath)
         {
             Bitmap baseImage = (Bitmap)Image.FromFile(filePath);
             Bitmap overlayImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\overlay.png");
@@ -77,11 +82,7 @@ namespace CombineImages
             graphics.DrawImage(baseImage, 0, 0);
             graphics.DrawImage(overlayImage, 0, 0);
 
-            // Save
-            // Todo: Extract this from this method
-            string fileName = Path.GetFileName(filePath);
-            string exportFilePath = @"C:\test\" + fileName;
-            watermarkedImage.Save(exportFilePath, ImageFormat.Jpeg);
+            return watermarkedImage;
         }
     }
 }
