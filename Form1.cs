@@ -53,5 +53,13 @@ namespace CombineImages
                 }   
             }
         }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            foreach (string x in listBox1.Items)
+            {
+                MessageBox.Show(x);
+            }
+        }
     }
 }
