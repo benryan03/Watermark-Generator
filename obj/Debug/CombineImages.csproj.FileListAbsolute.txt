@@ -8,3 +8,13 @@ C:\Users\Ben\source\repos\CombineImages\bin\Debug\CombineImages.exe
 C:\Users\Ben\source\repos\CombineImages\bin\Debug\CombineImages.pdb
 C:\Users\Ben\source\repos\CombineImages\obj\Debug\CombineImages.exe
 C:\Users\Ben\source\repos\CombineImages\obj\Debug\CombineImages.pdb
+C:\Users\Ben\Desktop\C#\Watermark-Generator\bin\Debug\CombineImages.exe.config
+C:\Users\Ben\Desktop\C#\Watermark-Generator\bin\Debug\CombineImages.exe
+C:\Users\Ben\Desktop\C#\Watermark-Generator\bin\Debug\CombineImages.pdb
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\CombineImages.csprojAssemblyReference.cache
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\CombineImages.Form1.resources
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\CombineImages.Properties.Resources.resources
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\CombineImages.csproj.GenerateResource.cache
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\CombineImages.csproj.CoreCompileInputs.cache
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\CombineImages.exe
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\CombineImages.pdb

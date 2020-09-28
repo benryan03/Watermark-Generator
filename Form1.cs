@@ -19,13 +19,13 @@ namespace CombineImages
         public Form1()
         {
             InitializeComponent();
-            test();
+            //test();
         }
 
         private void test()
         {
-            Bitmap baseImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\source\repos\CombineImages\base.jpg");
-            Bitmap overlayImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\source\repos\CombineImages\overlay.png");
+            Bitmap baseImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\base.jpg");
+            Bitmap overlayImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\overlay.png");
 
             var finalImage = new Bitmap(baseImage.Width, baseImage.Height, PixelFormat.Format32bppArgb);
             var graphics = Graphics.FromImage(finalImage);
@@ -38,17 +38,20 @@ namespace CombineImages
             //pictureBox1.Image = finalImage;
 
             //save the final composite image to disk
-            finalImage.Save(@"C:\Users\Ben\source\repos\CombineImages\final.jpg", ImageFormat.Jpeg);
+            finalImage.Save(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\final.jpg", ImageFormat.Jpeg);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-        }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            //Move selected files to listbox
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //Move selected files to listbox
+                foreach (object fileName in openFileDialog1.FileNames)
+                {
+                    listBox1.Items.Add(fileName.ToString());
+                }   
+            }
         }
     }
 }
