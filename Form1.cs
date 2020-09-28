@@ -35,9 +35,6 @@ namespace CombineImages
             graphics.DrawImage(baseImage, 0, 0);
             graphics.DrawImage(overlayImage, 0, 0);
 
-            //show in a winform picturebox
-            //pictureBox1.Image = finalImage;
-
             //save the final composite image to disk
             finalImage.Save(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\final.jpg", ImageFormat.Jpeg);
         }
@@ -65,12 +62,26 @@ namespace CombineImages
             // Export images
             foreach (string filePath in listBox1.Items)
             {
-                string fileName = Path.GetFileName(filePath);
-                string exportFilePath = @"C:\test\" + fileName;
-
-                Bitmap testImage = (Bitmap)Image.FromFile(filePath);
-                testImage.Save(exportFilePath, ImageFormat.Jpeg);
+                addWatermark(filePath);
             }
+        }
+
+        private void addWatermark(string filePath)
+        {
+            Bitmap baseImage = (Bitmap)Image.FromFile(filePath);
+            Bitmap overlayImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\overlay.png");
+            var watermarkedImage = new Bitmap(baseImage.Width, baseImage.Height, PixelFormat.Format32bppArgb);
+            
+            var graphics = Graphics.FromImage(watermarkedImage);
+            graphics.CompositingMode = CompositingMode.SourceOver;
+            graphics.DrawImage(baseImage, 0, 0);
+            graphics.DrawImage(overlayImage, 0, 0);
+
+            // Save
+            // Todo: Extract this from this method
+            string fileName = Path.GetFileName(filePath);
+            string exportFilePath = @"C:\test\" + fileName;
+            watermarkedImage.Save(exportFilePath, ImageFormat.Jpeg);
         }
     }
 }
