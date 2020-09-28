@@ -16,7 +16,6 @@ namespace CombineImages
 {
     public partial class Form1 : Form
     {
-        object[] imagesArray;
 
         public Form1()
         {
@@ -67,9 +66,10 @@ namespace CombineImages
             foreach (string filePath in listBox1.Items)
             {
                 string fileName = Path.GetFileName(filePath);
+                string exportFilePath = @"C:\test\" + fileName;
+
                 Bitmap testImage = (Bitmap)Image.FromFile(filePath);
-                string finalImagePath = @"C:\test\" + fileName;
-                testImage.Save(finalImagePath, ImageFormat.Jpeg);
+                testImage.Save(exportFilePath, ImageFormat.Jpeg);
             }
         }
     }
