@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CombineImages.Properties
+namespace WatermarkGenerator.Properties
 {
 
 

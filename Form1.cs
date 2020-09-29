@@ -12,7 +12,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace CombineImages
+namespace WatermarkGenerator
 {
     public partial class Form1 : Form
     {
@@ -40,7 +40,6 @@ namespace CombineImages
             string currentDir = Directory.GetCurrentDirectory();
             if (!Directory.Exists(currentDir + @"\ExportedImages\"))
             {
-                MessageBox.Show("test");
                 Directory.CreateDirectory(currentDir + @"\ExportedImages\");
             }
 

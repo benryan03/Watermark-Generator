@@ -1,4 +1,4 @@
-﻿namespace CombineImages
+﻿namespace WatermarkGenerator
 {
     partial class Form1
     {
