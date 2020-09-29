@@ -20,23 +20,6 @@ namespace CombineImages
         public Form1()
         {
             InitializeComponent();
-            //test();
-        }
-
-        private void test()
-        {
-            Bitmap baseImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\base.jpg");
-            Bitmap overlayImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\overlay.png");
-
-            var finalImage = new Bitmap(baseImage.Width, baseImage.Height, PixelFormat.Format32bppArgb);
-            var graphics = Graphics.FromImage(finalImage);
-            graphics.CompositingMode = CompositingMode.SourceOver;
-
-            graphics.DrawImage(baseImage, 0, 0);
-            graphics.DrawImage(overlayImage, 0, 0);
-
-            //save the final composite image to disk
-            finalImage.Save(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\final.jpg", ImageFormat.Jpeg);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,15 +69,5 @@ namespace CombineImages
             graphics.DrawImage(overlayImage, baseImage.Width - overlayImage.Width, baseImage.Height - overlayImage.Height, overlayImage.Width, overlayImage.Height);
             return watermarkedImage;
         }
-
-
-
-
-
-
-
-
-
     }
-    
 }
