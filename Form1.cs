@@ -54,9 +54,12 @@ namespace CombineImages
         private void generateButton_Click(object sender, EventArgs e)
         {
             // If export directory does not exist, create it
-            if (!Directory.Exists(@"C:\test\"))
+            string currentDir = Directory.GetCurrentDirectory();
+            MessageBox.Show(currentDir);
+            if (!Directory.Exists(currentDir + @"\ExportedImages\"))
             {
-                Directory.CreateDirectory(@"C:\test\");
+                MessageBox.Show("test");
+                Directory.CreateDirectory(currentDir + @"\ExportedImages\");
             }
 
             foreach (string filePath in listBox1.Items)
@@ -66,7 +69,7 @@ namespace CombineImages
 
                 // Export image
                 string fileName = Path.GetFileName(filePath);
-                string exportFilePath = @"C:\test\" + fileName;
+                string exportFilePath = currentDir + @"\ExportedImages\" + fileName;
                 watermarkedImage.Save(exportFilePath, ImageFormat.Jpeg);
             }
         }
