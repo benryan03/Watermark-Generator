@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.browseButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.generateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,15 +44,15 @@
             this.listBox1.Size = new System.Drawing.Size(776, 324);
             this.listBox1.TabIndex = 1;
             // 
-            // button1
+            // browseButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 342);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 64);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.browseButton.Location = new System.Drawing.Point(12, 342);
+            this.browseButton.Name = "browseButton";
+            this.browseButton.Size = new System.Drawing.Size(171, 64);
+            this.browseButton.TabIndex = 2;
+            this.browseButton.Text = "Browse";
+            this.browseButton.UseVisualStyleBackColor = true;
+            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
             // 
             // openFileDialog1
             // 
@@ -76,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.generateButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.browseButton);
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -86,7 +86,7 @@
 
         #endregion
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button generateButton;
     }

@@ -22,11 +22,11 @@ namespace CombineImages
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void browseButton_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //Move selected files to listbox
+                //Move selected file(s) to listbox
                 foreach (object filePath in openFileDialog1.FileNames)
                 {
                     listBox1.Items.Add(filePath.ToString());
@@ -38,7 +38,6 @@ namespace CombineImages
         {
             // If export directory does not exist, create it
             string currentDir = Directory.GetCurrentDirectory();
-            MessageBox.Show(currentDir);
             if (!Directory.Exists(currentDir + @"\ExportedImages\"))
             {
                 MessageBox.Show("test");
