@@ -41,7 +41,7 @@ namespace CombineImages
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //Move selected files to listbox
                 foreach (object filePath in openFileDialog1.FileNames)
@@ -56,7 +56,7 @@ namespace CombineImages
             // If export directory does not exist, create it
             if (!Directory.Exists(@"C:\test\"))
             {
-                System.IO.Directory.CreateDirectory(@"C:\test\");
+                Directory.CreateDirectory(@"C:\test\");
             }
 
             foreach (string filePath in listBox1.Items)
@@ -75,14 +75,23 @@ namespace CombineImages
         {
             Bitmap baseImage = (Bitmap)Image.FromFile(filePath);
             Bitmap overlayImage = (Bitmap)Image.FromFile(@"C:\Users\Ben\Desktop\C#\Watermark-Generator\overlay.png");
-            var watermarkedImage = new Bitmap(baseImage.Width, baseImage.Height, PixelFormat.Format32bppArgb);
-            
+            Bitmap watermarkedImage = new Bitmap(baseImage.Width, baseImage.Height);
+
             var graphics = Graphics.FromImage(watermarkedImage);
             graphics.CompositingMode = CompositingMode.SourceOver;
-            graphics.DrawImage(baseImage, 0, 0);
-            graphics.DrawImage(overlayImage, 0, 0);
-
+            graphics.DrawImage(baseImage, 0, 0, baseImage.Width, baseImage.Height);
+            graphics.DrawImage(overlayImage, baseImage.Width - overlayImage.Width, baseImage.Height - overlayImage.Height, overlayImage.Width, overlayImage.Height);
             return watermarkedImage;
         }
+
+
+
+
+
+
+
+
+
     }
+    
 }
