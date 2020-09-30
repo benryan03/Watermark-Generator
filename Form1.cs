@@ -34,6 +34,11 @@ namespace WatermarkGenerator
             }
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Remove(listBox1.SelectedItem);
+        }
+
         private void generateButton_Click(object sender, EventArgs e)
         {
             // If export directory does not exist, create it
@@ -65,6 +70,7 @@ namespace WatermarkGenerator
             graphics.CompositingMode = CompositingMode.SourceOver;
             graphics.DrawImage(baseImage, 0, 0, baseImage.Width, baseImage.Height);
             graphics.DrawImage(overlayImage, baseImage.Width - overlayImage.Width, baseImage.Height - overlayImage.Height, overlayImage.Width, overlayImage.Height);
+            
             return watermarkedImage;
         }
     }
