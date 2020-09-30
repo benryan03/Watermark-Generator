@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.imageList = new System.Windows.Forms.ListBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.generateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // imageList
             // 
-            this.listBox1.AllowDrop = true;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(776, 324);
-            this.listBox1.TabIndex = 1;
+            this.imageList.AllowDrop = true;
+            this.imageList.FormattingEnabled = true;
+            this.imageList.ItemHeight = 20;
+            this.imageList.Location = new System.Drawing.Point(12, 12);
+            this.imageList.Name = "imageList";
+            this.imageList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.imageList.Size = new System.Drawing.Size(776, 324);
+            this.imageList.TabIndex = 1;
             // 
             // browseButton
             // 
@@ -82,27 +83,38 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(12, 409);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 20);
+            this.statusLabel.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.browseButton);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.imageList);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Watermark Generator";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox imageList;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Label statusLabel;
     }
 }
 

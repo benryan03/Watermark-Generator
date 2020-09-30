@@ -29,14 +29,14 @@ namespace WatermarkGenerator
                 //Move selected file(s) to listbox
                 foreach (object filePath in openFileDialog1.FileNames)
                 {
-                    listBox1.Items.Add(filePath.ToString());
+                    imageList.Items.Add(filePath.ToString());
                 }   
             }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Remove(listBox1.SelectedItem);
+            imageList.Items.Remove(imageList.SelectedItem);
         }
 
         private void generateButton_Click(object sender, EventArgs e)
@@ -48,16 +48,24 @@ namespace WatermarkGenerator
                 Directory.CreateDirectory(currentDir + @"\ExportedImages\");
             }
 
-            foreach (string filePath in listBox1.Items)
+            int generatedImagesCount = 0;
+            foreach (string filePath in imageList.Items)
             {
+                // Update status
+                string fileName = Path.GetFileName(filePath);
+                statusLabel.Text = "Generating " + fileName + ".jpg";
+
                 // Add watermark to image
                 Bitmap watermarkedImage = addWatermark(filePath);
 
                 // Export image
-                string fileName = Path.GetFileName(filePath);
                 string exportFilePath = currentDir + @"\ExportedImages\" + fileName;
                 watermarkedImage.Save(exportFilePath, ImageFormat.Jpeg);
+
+                generatedImagesCount++;
             }
+
+            statusLabel.Text = generatedImagesCount.ToString() + " images successfully generated.";
         }
 
         private Bitmap addWatermark(string filePath)
