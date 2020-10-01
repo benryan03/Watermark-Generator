@@ -35,7 +35,8 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.watermarkTextBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusLabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList
@@ -96,19 +97,18 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(800, 32);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // statusLabel
             // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(8, 430);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(92, 20);
-            this.statusLabel.TabIndex = 8;
+            this.statusLabel.Size = new System.Drawing.Size(100, 25);
             this.statusLabel.Text = "statusLabel";
             // 
             // Form1
@@ -116,7 +116,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.watermarkTextBox);
             this.Controls.Add(this.deleteButton);
@@ -125,6 +124,8 @@
             this.Controls.Add(this.imageList);
             this.Name = "Form1";
             this.Text = "Watermark Generator";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +139,7 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.TextBox watermarkTextBox;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
     }
 }
 
