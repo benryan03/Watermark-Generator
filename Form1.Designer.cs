@@ -34,6 +34,7 @@
             this.generateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.statusLabel = new System.Windows.Forms.Label();
+            this.watermarkTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // imageList
@@ -51,7 +52,7 @@
             // 
             this.browseButton.Location = new System.Drawing.Point(12, 342);
             this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(171, 64);
+            this.browseButton.Size = new System.Drawing.Size(90, 40);
             this.browseButton.TabIndex = 2;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
@@ -65,9 +66,9 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(617, 342);
+            this.generateButton.Location = new System.Drawing.Point(698, 342);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(171, 64);
+            this.generateButton.Size = new System.Drawing.Size(90, 40);
             this.generateButton.TabIndex = 3;
             this.generateButton.Text = "Generate";
             this.generateButton.UseVisualStyleBackColor = true;
@@ -75,9 +76,9 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(189, 342);
+            this.deleteButton.Location = new System.Drawing.Point(108, 342);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(171, 64);
+            this.deleteButton.Size = new System.Drawing.Size(90, 40);
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -88,14 +89,24 @@
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(12, 409);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(0, 20);
+            this.statusLabel.Size = new System.Drawing.Size(92, 20);
             this.statusLabel.TabIndex = 6;
+            this.statusLabel.Text = "statusLabel";
+            // 
+            // watermarkTextBox
+            // 
+            this.watermarkTextBox.Location = new System.Drawing.Point(278, 349);
+            this.watermarkTextBox.Name = "watermarkTextBox";
+            this.watermarkTextBox.Size = new System.Drawing.Size(363, 26);
+            this.watermarkTextBox.TabIndex = 7;
+            this.watermarkTextBox.Text = "Watermark text";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.watermarkTextBox);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.generateButton);
@@ -115,6 +126,7 @@
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.TextBox watermarkTextBox;
     }
 }
 
