@@ -2,9 +2,9 @@ C:\Users\Ben\Desktop\C#\Watermark-Generator\bin\Debug\WatermarkGenerator.exe.con
 C:\Users\Ben\Desktop\C#\Watermark-Generator\bin\Debug\WatermarkGenerator.exe
 C:\Users\Ben\Desktop\C#\Watermark-Generator\bin\Debug\WatermarkGenerator.pdb
 C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.csprojAssemblyReference.cache
-C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.Form1.resources
 C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.Properties.Resources.resources
 C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.csproj.GenerateResource.cache
 C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.csproj.CoreCompileInputs.cache
 C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.exe
 C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.pdb
+C:\Users\Ben\Desktop\C#\Watermark-Generator\obj\Debug\WatermarkGenerator.MainWindow.resources
