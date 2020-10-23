@@ -1,4 +1,7 @@
-This is a Windows app that adds a text watermark to images.
+Watermark Generator
+https://github.com/benryan03/Watermark-Generator
+
+Watermark Generator  is a Windows app that adds a text watermark to images.
 
 The user can select multiple images with the Browse button, and type their text
 in the text box. When they click the Generate button, a copy of each image will
